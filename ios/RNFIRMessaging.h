@@ -11,7 +11,7 @@
 
 #import <React/RCTEventEmitter.h>
 
-@import UserNotifications;
+#import <UserNotifications/UserNotifications.h>
 
 @interface RNFIRMessaging : RCTEventEmitter <RCTBridgeModule, FIRMessagingDelegate>
 
