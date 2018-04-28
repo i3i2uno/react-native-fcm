@@ -264,6 +264,11 @@ FCM.on = (event, callback) => {
             if (event === FCMEvent.Notification) {
                 let data = payload.data || {};
                 delete payload.data;
+                try {
+                    if (data.notification) {
+                        data.notification = JSON.parse(data.notification);
+                    }
+                } catch (err) { }
                 const pay = Object.assign(data, payload);
                 callback(pay);
             }
